@@ -1,8 +1,8 @@
 package guru.springframework.spring5webapp.bootstrap;
 
-import guru.springframework.spring5webapp.model.Author;
-import guru.springframework.spring5webapp.model.Book;
-import guru.springframework.spring5webapp.model.Publisher;
+import guru.springframework.spring5webapp.domain.Author;
+import guru.springframework.spring5webapp.domain.Book;
+import guru.springframework.spring5webapp.domain.Publisher;
 import guru.springframework.spring5webapp.repositories.AuthorRepository;
 import guru.springframework.spring5webapp.repositories.BookRepository;
 import guru.springframework.spring5webapp.repositories.PublisherRepository;
@@ -26,8 +26,8 @@ public class BootstrapData implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        Publisher publisher = new Publisher("Penguin", "123 Main St", "Grapevine", "TX",
-                "76051");
+        Publisher publisher = new Publisher();
+        publisher.setName("penguin");
 
         publisherRepository.save(publisher);
 
